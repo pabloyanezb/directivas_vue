@@ -10,47 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Calcula tu Consumo | Proyecto es6</title>
-
-    <style>
-
-        body {
-            padding: 0;
-            text-align: center;
-        }
-        .background {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
- 
-        }
-        .container {
-            background-color: rgba(97, 97, 97, 0.219);
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 3rem;
-            backdrop-filter: blur(5px);
-            box-shadow: -7px -7px 23px -4px rgba(0, 0, 0, 0.2);
-            max-width: 360px;
-            
-            color: white;
-        }
-        li {
-            text-align: left;
-            list-style:none
-        }
-        h2 {
-            margin-bottom: 2rem;
-        }
-        h4 {
-            text-align: left;
-        }
-        
-        
-        
-    </style>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 
@@ -58,13 +18,14 @@
         <div class="background">
             
             <div class="container app">
-                <h2>Conocimientos de programación de {{ name }}</h2>
+
+                <h2>Conocimientos de <b>{{ name }}</b></h2>
                 <ul> 
                     <h4 v-if='encabezado'>Aprendidos</h4>
                     <li v-for='(unItem, i) in Aprendidos' v-bind:key='i'>{{ unItem }}</li>
                 </ul>
                 <ul> 
-                    <h4 v-if='encabezado'>Estudiar</h4>
+                    <h4 v-if='encabezado'>Por aprender</h4>
                     <li  v-for='(unItem, i) in Estudiar' v-bind:key='i' v-if='i%2==0'>{{++i}}. {{ unItem }}</li>
                 </ul>
             </div>         
@@ -77,17 +38,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-
-        <script>
-             var app = new Vue({     
-                el: ".app",
-                data: {
-                    name: 'Pablo',
-                    encabezado: true,
-                    Aprendidos: ['HTML', 'CSS', 'Javascript', 'JQuery'],
-                    Estudiar: ['ES6', 'Python', 'Vue', 'React']
-                }
-            })
-        </script>
+        <script src="script.js"></script>
+      
     </body>	
 </html>
